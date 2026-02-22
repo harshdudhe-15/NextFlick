@@ -1,0 +1,89 @@
+.nextflick-about {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  //border-radius: 12px;
+}
+
+.about-title {
+  color: #e50914;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.about-video {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 18px;
+  object-fit: cover;
+  transition: 
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    filter 0.45s ease;
+}
+
+.about-video.video-active {
+  transform: scale(1.05);
+  filter: saturate(1.15) brightness(1.05);
+  box-shadow:
+    0 0 25px rgba(35, 13, 145, 0.45),
+    0 0 50px rgba(255, 80, 40, 0.35),
+    0 0 80px rgba(140, 70, 255, 0.25);
+}
+
+
+.about-video:hover {
+  transform: scale(1.05);
+  filter: saturate(1.15) brightness(1.05);
+  box-shadow:
+    0 0 25px rgba(48, 16, 165, 0.45),   /* red core */
+    0 0 50px rgba(255, 80, 40, 0.35),  /* orange glow */
+    0 0 80px rgba(140, 70, 255, 0.25); /* purple aura */
+}
+
+.about-card {
+  background-color: #1c1c1c;
+  padding: 36px 48px;
+  border-radius: 16px;
+  min-height: 280px;
+  max-width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover,
+.about-card.active-hover  {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(229, 9, 20, 0.25);
+}
+
+.about-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 15px;
+  background-color: #e50914;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.about-subtitle {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.about-text {
+  max-width: 720px; 
+  color: #b3b3b3;
+  line-height: 1.8;
+}
+
+.vertical-video {
+  width: 100%;
+  max-width: 260px;        // controls size
+  aspect-ratio: 9 / 16;   // 🔑 makes it vertical
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(229, 9, 20, 0.35);
+}

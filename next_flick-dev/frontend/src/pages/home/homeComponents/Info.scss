@@ -1,0 +1,41 @@
+// /* Outer container (white → black) */
+.info {
+  background-color: rgb(18, 18, 18);
+  padding: 3rem 0;
+}
+
+/* Inner box (black → red) */
+.info-card {
+  background-color: #fd232ec3 !important; /* Netflix red */
+  border-radius: 16px;
+  border-color: #ffffff;
+  border: none;
+  box-shadow: none;
+}
+
+/* Heading text (white) */
+.info-card .text-danger {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+.text-developer{
+    color: #ffffff !important;
+    text-shadow: none;
+}
+
+/* Main names (black text) */
+.info-card strong {
+  color: #000000 !important;
+}
+
+/* Sub text (black text) */
+.info-card .text-secondary {
+  color: #d1cccc !important;
+  opacity: 0.8;
+}
+
+/* Keep spacing & size untouched */
+.info-card .lead {
+  margin-top: 2rem;
+}

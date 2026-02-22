@@ -1,0 +1,207 @@
+/* ===============================
+   HERO SECTION WRAPPER
+================================ */
+.hero-section {
+  position: relative;
+  min-height: 75vh;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ===============================
+   TOP & BOTTOM WHITE GLOW
+================================ */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(229, 9, 20, 0.18),
+    rgba(229, 9, 20, 0.08),
+    rgba(229, 9, 20, 0)
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;
+  background: linear-gradient(
+    to top,
+    rgba(229, 9, 20, 0.18),
+    rgba(229, 9, 20, 0.08),
+    rgba(229, 9, 20, 0)
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ===============================
+   MOVING BACKGROUND (TREADMILL)
+================================ */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-bg-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: treadmill-scroll 40s linear infinite;
+}
+
+.hero-bg-track img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Dark overlay on background */
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.65)
+  );
+}
+
+/* Background animation */
+@keyframes treadmill-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+/* ===============================
+   HERO CONTENT
+================================ */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  min-height: 75vh;
+}
+
+/* ===============================
+   SEARCH BAR (GLASSMORPHISM)
+================================ */
+.hero-search {
+  backdrop-filter: blur(12px);
+  background: rgba(100, 100, 100, 0.35);
+  border-radius: 50px;
+  padding: 6px;
+}
+
+/* Input */
+.hero-search-input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  padding-left: 24px;
+}
+
+.hero-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-search-input:focus {
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+}
+
+/* ===============================
+   SEARCH BUTTON (CIRCLE)
+================================ */
+.input-group .hero-search-btn {
+  width: 56px !important;
+  height: 56px !important;
+  min-width: 56px !important;
+  min-height: 56px !important;
+
+  border-radius: 50% !important;
+  background: transparent !important;
+
+  border: 2px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+.input-group .hero-search-btn i {
+  font-size: 1.25rem;
+  color: #fff;
+  line-height: 1;
+}
+
+.input-group .hero-search-btn:hover {
+  border-color: #e50914 !important;
+  box-shadow: 0 0 16px rgba(229, 9, 20, 0.6) !important;
+  transform: scale(1.05);
+}
+
+.input-group .hero-search-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===============================
+   LOGIN POPUP OVERLAY
+================================ */
+.login-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.login-popup {
+  background: #111;
+  color: #fff;
+  padding: 24px 28px;
+  border-radius: 12px;
+  max-width: 380px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+}
+
+.login-popup h5 {
+  color: #e50914;
+}
+
+.login-popup p {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}

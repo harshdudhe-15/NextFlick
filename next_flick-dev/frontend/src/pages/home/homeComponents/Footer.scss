@@ -1,0 +1,65 @@
+.footer{
+    background-color: rgba(18, 18, 18);
+    max-height: 82px;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+}
+
+/* Footer base */
+.footer-theme {
+  border-top-color: rgba(255, 0, 0, 0.4);
+}
+
+/* Text color */
+.footer-text {
+  color: #b3b3b3;
+  font-size: 0.9rem;
+}
+
+/* Icons */
+.footer-icons a {
+  color: #b3b3b3;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* SVG icon inherits color */
+.footer-icons svg {
+  fill: currentColor;
+}
+
+/* Hover effect – NextFlick red */
+.footer-icons a:hover {
+  color: #e50914;
+  transform: scale(1.15);
+}
+
+.footer-icons i {
+  font-size: 1.4rem;
+  color: #b3b3b3;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icons a:hover i {
+  color: #e50914;
+  transform: scale(1.2);
+}
+
+
+/* Logo glow (already close to Netflix style) */
+.glow-red {
+  filter: drop-shadow(0 0 6px rgba(229, 9, 20, 0.8));
+  transition: transform 0.3s ease;
+}
+
+.glow-red:hover {
+  transform: scale(1.05);
+}
+
+.footer-link {
+  color: #e50914; /* NextFlick red */
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
