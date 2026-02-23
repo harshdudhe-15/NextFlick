@@ -42,7 +42,7 @@ export default function MoviePage({ mediaType, id, onClose }) {
             <div className="modal-info">
               <h2>{movie.title}</h2>
               <p>⭐ {movie.rating?.toFixed(1) || "N/A"}/10</p>
-              <p>Media Type: {movie.media_type}</p>
+              <p>Media Type: {movie.media_type?.toUpperCase()}</p>
               <p>{movie.overview}</p>
 
               {movie.trailer && (
