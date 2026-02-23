@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./home.scss"
 import Login from "../auth/Login";
@@ -7,6 +7,7 @@ import About from "./homeComponents/About";
 import Footer from "./homeComponents/Footer";
 import Info from "./homeComponents/Info";
 import TrendingBar from "./homeComponents/TrandingBar";
+import IntroLoader from "../loading/IntroLoading";
 const Header = lazy(() => import("./homeComponents/Header"));
 const Heroes = lazy(() => import("./homeComponents/Heroes_body"));
 
@@ -14,24 +15,33 @@ const Home = () => {
     const [showLoginPopup, setShowLoginPopup] = useState(false);
     const [showRegisterPopup, setShowRegisterPopup] = useState(false);
     const [registerEmail, setRegisterEmail] = useState("");
+    const [showIntro, setShowIntro] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setShowIntro(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
 
     return(  
-    // <div className="home-div">  
-    //     <Header />
-    //     <Heroes />
-    // </div>
     <>
-      {/* HOME CONTENT */}
-      <div className="home-div">
-        <Header onLoginClick={() => setShowLoginPopup(true)} />
-        <Heroes onRequireLogin={() => setShowLoginPopup(true)} />
-        <TrendingBar/>
-        <About />
-        <Info />
-        <Footer />
-      </div>
+      {/* 🔥 INTRO LOADER */}
+      {showIntro && <IntroLoader />}
 
+      {/* HOME CONTENT */}
+      {!showIntro && (
+        <div className="home-div">
+          <Header onLoginClick={() => setShowLoginPopup(true)} />
+          <Heroes onRequireLogin={() => setShowLoginPopup(true)} />
+          <TrendingBar/>
+          <About />
+          <Info />
+          <Footer />
+        </div>
+      )}
       {/* LOGIN POPUP */}
       {showLoginPopup && (
         <div
